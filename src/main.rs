@@ -1,5 +1,8 @@
 use bevy::prelude::*;
 
+mod maze;
+use maze::*;
+
 struct Person;
 struct Name(String);
 
@@ -15,6 +18,8 @@ impl Plugin for HelloPlugin {
 }
 
 fn main() {
+    println!("{}", maze::BinaryTree::create(9, 7));
+    println!("{}", maze::SideWinder::create(18, 5));
     App::build()
         .add_plugins(DefaultPlugins)
         .add_plugin(HelloPlugin)
